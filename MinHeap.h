@@ -39,7 +39,7 @@ private:
 		}
 
 		if (this->arr!=nullptr)
-		delete this->arr;
+		delete[] this->arr;
 
 		this->capacity = newCapacity;
 		this->arr = newArr;
@@ -56,7 +56,7 @@ private:
 
 		if (this->arr[index].key < this->arr[parent].key)
 		{
-		   swap(this->arr[index], this->arr[parent]);
+		   std::swap(this->arr[index], this->arr[parent]);
 		   shiftUp(parent);
 		}
 
@@ -88,7 +88,7 @@ private:
 		if (minIndex == -1)
 			return;
 
-		swap(arr[index], arr[minIndex]);
+		std::swap(arr[index], arr[minIndex]);
 		shiftDown(minIndex);
 
 
@@ -147,7 +147,7 @@ public:
 	{
 		assert(totalItems != 0);
 
-		swap(arr[0], arr[this->totalItems-1]);
+		std::swap(arr[0], arr[this->totalItems-1]);
 
 		totalItems--;
 
